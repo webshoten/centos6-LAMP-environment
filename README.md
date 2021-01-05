@@ -10,6 +10,12 @@ EC2->インスタンスの作成->AWS Marketplace->Centos6で検索
 ・以下のインスタンスを選択する。
 ![Test Image 1](img/centos.PNG)
 
+・Teratermのショートカット作って
+```
+プロパティ->リンク先　に以下貼り付け
+"C:\Program Files (x86)\teraterm\ttermpro.exe" [GLOBAL IP] /auth=publickey /user=centos /keyfile=[鍵(.pem)の場所]
+```
+これでショートカットダブルクリックで接続可能
 
 
 # 2．centos6.10初期設定

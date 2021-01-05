@@ -13,7 +13,7 @@ EC2->インスタンスの作成->AWS Marketplace->Centos6で検索
 ・Teratermのショートカット作って
 ```
 プロパティ->リンク先　に以下貼り付け
-"C:\Program Files (x86)\teraterm\ttermpro.exe" [GLOBAL IP] /auth=publickey /user=centos /keyfile=[鍵(.pem)の場所]
+"C:\Program Files (x86)\teraterm\ttermpro.exe" [GLOBAL IP] /auth=publickey /user=centos /keyfile=[鍵(.pem)のフルパス]
 ```
 これでショートカットダブルクリックで接続可能
 
@@ -96,3 +96,15 @@ sudo rpm -Uvh \
   ```bash
   $sudo reboot
   ```
+  
+  ・visual studio codeのconfigに以下追加
+  ※鍵の置き場所はCのユーザフォルダ以下じゃないと接続できない
+  ```
+  Host [任意]
+    HostName [GLOBAL IP]
+    IdentityFile [鍵(.pem)のフルパス]
+    PreferredAuthentications publickey
+    User centos
+  ```
+  
+  

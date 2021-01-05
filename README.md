@@ -2,7 +2,7 @@
 仕事でLAMP環境
 ※centos6.10 ,mysql 5.6.50 ,php7.3.25  
 が必要になったので作成した時のメモをここに書いておきました。
-おいおいcloudformationのテンプレートとかpulumiなどupできたらと思ってます。
+おいおいcloudformationのテンプレートとかpulumiなどupできたらなぁ
 
 # 1．AWSでインスタンス作成
 ・AWSにログインし

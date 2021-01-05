@@ -49,7 +49,7 @@ $mysql --version
 ・初期設定～rootで接続まではここを参考
 https://www.server-world.info/query?os=CentOS_6&p=mysql
 
-・ユーザ作成と任意のIPから接続できるDBを作成
+・ユーザ作成と任意のIPから外部接続できるDBを作成
 ※IP制限はAWSのセキュリティグループにて行う
 ```
 CREATE USER 'username'@'%' IDENTIFIED BY 'userpassword';
@@ -61,6 +61,17 @@ GRANT ALL PRIVILEGES ON dbname.* TO 'username'@'%';
 ```
 SELECT * FROM mysql.db WHERE user = 'username' AND host = '%' AND db = 'dbname' \G
 ```
+・外部接続のためiptableで3306の許可
+```
+$sudo iptables -A INPUT -p tcp --dport 3306 -j ACCEPT
+$sudo /etc/rc.d/init.d/iptables restart
+```
+・接続できるかはクライアントpowershellなどで
+```
+telnet [GLOBAL_IP] 3306
+```
+で反応があればOK
+
 # 4．php7.3.25インストール
 ・インストール、バージョン確認
 ```bash
